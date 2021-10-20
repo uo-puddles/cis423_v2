@@ -1,18 +1,11 @@
-'''
-Chapter 3 asks for chapter 2 transformers to be placed here
-
-titanic_transformer = Pipeline(steps=[
-    ('drop', up.DropColumnsTransformer(['Age', 'Gender', 'Class', 'Joined', 'Married',  'Fare', 'Survived'], 'keep')),
-    ('gender', up.MappingTransformer('Gender', {'Male': 0, 'Female': 1})),
-    ('class', up.MappingTransformer('Class', {'Crew': 0, 'C3': 1, 'C2': 2, 'C1': 3})),
-    ('ohe', up.OHETransformer(target_column='Joined')),
-    ], verbose=True)
-'''
 from sklearn.base import BaseEstimator, TransformerMixin
-
 from sklearn.pipeline import Pipeline
 import pandas as pd
 import numpy as np
+
+'''
+=======================   chapter 2 transformers to be placed here  ====================================
+'''
 
 #drop by removing or keeping
 class DropColumnsTransformer(BaseEstimator, TransformerMixin):
@@ -92,7 +85,9 @@ class OHETransformer(BaseEstimator, TransformerMixin):
     result = self.transform(X)
     return result
   
-#chapter 4 asks for 2 new transformers
+'''
+=======================   chapter 4 transformers to be placed here  ====================================
+'''
 
 class Sigma3Transformer(BaseEstimator, TransformerMixin):
   def __init__(self, target_column):  
